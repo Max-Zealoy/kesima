@@ -10,8 +10,6 @@ useEffect(() => {
     fetchItem();
 }, []);
 
-
-
     const fetchItem = async () =>{
     try {
         const response = await fetch('http://localhost:5000/products/' + match.params.id);

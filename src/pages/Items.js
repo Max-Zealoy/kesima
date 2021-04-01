@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import Item from './Item'
-import {Link} from "react-router-dom";
 
 
 function Items({ items, deleteItem }) {
@@ -28,16 +27,6 @@ function Items({ items, deleteItem }) {
     }
 
 
-    const getItem = async (itemId) => {
-        try {
-            await fetch('http://localhost:5000/products/' + itemId, {
-                method: 'GET', // GET, POST, PATCH, DELETE
-            });
-        } catch (message) {
-            throw new Error(message);
-        }
-        fetchItems();
-    }
 
     return (
         <div> 
@@ -62,13 +51,9 @@ function Items({ items, deleteItem }) {
             }
         </div>
 
-//<Link to={{ pathname: `product/${product.name}`, state: { product } }}>
-//<Link to={`/item/${item['_id']}`}><button>item</button></Link>
 
     )
 }
 
 export default Items
 
-
-// key={pun['_id']} pun={pun} deletePun={deletePun}

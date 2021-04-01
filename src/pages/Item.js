@@ -7,9 +7,6 @@ function Item({ item, deleteItem }) {
     const handleDeleteBtn = () => {
         deleteItem(item['_id']);
     }
-
-
-
     
 /*
 
@@ -19,9 +16,8 @@ function Item({ item, deleteItem }) {
 	"description": "Something good",
 	"stock":10 
 
-   <img src ={item.image} alt="image"></img> 
     */ 
-//  {<a href={/product/${product._id}} > <ImageSlider images={product.images} /></a>}
+// 
     return (
         
         <table>

@@ -36,32 +36,21 @@
         }
     }
 
-
-
-/*                  key={item['_id']} 
-                    item={item}
-                    title={item.title}
-                    description={item.description}
-                    stock={item.stock}
-                    // image={item.image}
-                    price={item.price}  */
-
-
      return (
          <div>
              <h1>Create Item</h1>
  
-             <form onSubmit={handleSubmit} 
-             onChange={handleChange}>
+             <form onSubmit={handleSubmit} onChange={handleChange}>
+            
              <label>
              <p>Titel</p>
              <input 
              name="title"
              type="text" 
              value={item.title} 
-
              />
              </label>
+
              <label>
              <p>price</p>
              <input 
@@ -70,10 +59,11 @@
              value={item.price} 
              />
              </label>
-             
-                <br> 
-                </br>
-                <label>
+
+             <br> 
+             </br>
+
+             <label>
              <p>stock</p>
              <input 
              name="stock"
@@ -81,21 +71,18 @@
              value={item.stock} 
              />
              </label>
-             
+            
                 <br> 
                 </br> 
+
                  <textarea 
-                 
                      name="description" 
                      value={item.description}
                      cols="30" 
                      rows="10"
                  ></textarea> 
-                 
-                
                  <br />
                  <br />
-                 
                  <button>Create Item</button>
                  <br />
                  <br />

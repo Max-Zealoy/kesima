@@ -3,7 +3,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link, useHistory} from "react-router-dom";
 
-function UpdateItem({ match }) {
+function UpdateItems({ match }) {
     console.log(match);
     console.log('ItemId:', match.params.id);
     const [item, setItem] = useState({});
@@ -117,4 +117,4 @@ function UpdateItem({ match }) {
     )
 }
 
-export default UpdateItem
+export default UpdateItems
