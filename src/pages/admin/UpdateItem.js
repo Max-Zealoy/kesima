@@ -41,7 +41,7 @@ function UpdateItem({ match }) {
     
             // window.location.replace('/manage-puns') // redirects to the index.html page
             // A smoother redirecting, without a page reload
-            history.push('/manage-items')
+            history.push('manage-items')
         } catch (error) {
             console.log(error);
         }
@@ -59,23 +59,59 @@ function UpdateItem({ match }) {
         <div>
             <h1>Update Item</h1>
 
-            <form onSubmit={updateItem}>
-                <textarea 
-                    name="content" 
-                    value={item.content} 
-                    onChange={handleChange}
-                    cols="30" 
-                    rows="10"
-                ></textarea>
+            <form onSubmit={updateItem} onChange={handleChange}>
+             <label>
+             <p>Titel</p>
+             <input 
+             name="title"
+             type="text" 
+             value={item.title} 
+
+             />
+             </label>
+             <label>
+             <p>price</p>
+             <input 
+             name="price"
+             type="Number"
+             value={item.price} 
+             />
+             </label>
+             
+                <br> 
+                </br>
+            <label>
+             <p>stock</p>
+             <input 
+             name="stock"
+             type="Number"
+             value={item.stock} 
+             />
+             </label>
+             
+                <br> 
+                </br> 
+                 <textarea 
+                     name="description" 
+                     value={item.description}
+                     cols="30" 
+                     rows="10"
+                 ></textarea> 
+                 
+                
+                 <br />
+                 <br />
+                 
+                 <button>Update</button>
+                 <br />
+                 <br />
+                
                 
                 <p>Created at: {item.date}</p>
                 <br />
                 <br />
                 
-                <button>Update</button>
-                <br />
-                <br />
-                <Link to="/manage-items">&larr; Back</Link>
+                <Link to="/admin/manage-items">&larr; Back</Link>
             </form>
         </div>
     )

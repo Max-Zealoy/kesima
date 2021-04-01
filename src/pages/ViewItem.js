@@ -1,7 +1,8 @@
 import React, {useState, useEffect }from 'react';
+import {Link, useHistory} from "react-router-dom";
 
 
-function Home({ match }) {
+function ViewItem({ match }) {
  console.log('ItemId:', match.params.id)
 const [item, setItem] = useState({});
 
@@ -27,15 +28,14 @@ useEffect(() => {
 
     return (
         <div>
-            <h1>Home page</h1>
+            <h1>Item Page</h1>
             <h2>{item.title}</h2>
             <h3>{item.price}</h3>
             <h3>{item.stock}</h3>
             <h3>{item.description}</h3>
+            <Link to="/admin/manage-items">&larr; Back</Link>
         </div>
     )
 }
 
-export default Home
-
-
+export default ViewItem

@@ -11,7 +11,7 @@ function Nav() {
 
                 {/* Use Links to navigate smoother, withour reloading the page */}
                 <Link to="/">Home</Link>
-                <Link to="/manage-items">Manage Items</Link>
+                <Link to="/admin/manage-items">Manage Items</Link>
                 <Link to="/create-items">Create Items</Link>
 
             </ul>

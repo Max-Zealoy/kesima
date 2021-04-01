@@ -35,6 +35,8 @@ function ManageItems() {
         fetchItems();
     }
 
+
+
     return (
         <div>
             <h1>Manage items</h1> 

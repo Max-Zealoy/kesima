@@ -9,6 +9,8 @@ function Item({ item, deleteItem }) {
     }
 
 
+
+    
 /*
 
     "title": "The post4",
@@ -17,11 +19,12 @@ function Item({ item, deleteItem }) {
 	"description": "Something good",
 	"stock":10 
 
-
+   <img src ={item.image} alt="image"></img> 
     */ 
-
+//  {<a href={/product/${product._id}} > <ImageSlider images={product.images} /></a>}
     return (
-        <article>
+        
+        <table>
             <h1>{item.title}</h1>
             <p>
                 {item.content}
@@ -30,7 +33,7 @@ function Item({ item, deleteItem }) {
                 <p>Description: {item.description}</p>
                 <br />
                 <p>stock :{item.stock}</p>
-                <img src ={item.image} ></img> 
+               
 
                 <br />
                 {`${itemDate.getFullYear()}-${itemDate.getMonth()}-${itemDate.getDate()}`}
@@ -41,7 +44,8 @@ function Item({ item, deleteItem }) {
             */}
             <Link to={`/update-items/${item['_id']}`}><button>Update</button></Link>
             <button onClick={handleDeleteBtn}>Delete</button>
-        </article>
+            <Link to={`/ViewItem/${item['_id']}`}><button>View Item</button></Link>
+        </table>
     )
 }
 
