@@ -43,6 +43,7 @@ function ManageItems() {
             <Items 
                 items={items} 
                 deleteItem={deleteItem}
+                pageId="ManageItems"
             />
         </div>
     )

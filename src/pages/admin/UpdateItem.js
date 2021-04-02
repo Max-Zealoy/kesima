@@ -13,6 +13,17 @@ function UpdateItems({ match }) {
         fetchItem();
     }, []);
 
+
+    const handleChange = (e) => {
+        const name = e.target.name
+        const value = e.target.value
+
+       setItem({
+           ...item,
+           [name]: value
+       })
+   }
+   
     const fetchItem = async () => {
         try {
             const response = await fetch('http://localhost:5000/products/' + match.params.id);
@@ -41,18 +52,13 @@ function UpdateItems({ match }) {
     
             // window.location.replace('/manage-puns') // redirects to the index.html page
             // A smoother redirecting, without a page reload
-            history.push('manage-items')
+            history.push('../admin/manage-items')
         } catch (error) {
             console.log(error);
         }
     }
 
-    const handleChange = (e) => {
-        setItem({
-            ...item,
-            content: e.target.value
-        })
-    }
+
 
 
     return (
@@ -102,6 +108,7 @@ function UpdateItems({ match }) {
                  <br />
                  <br />
                  
+                 
                  <button>Update</button>
                  <br />
                  <br />
@@ -110,8 +117,7 @@ function UpdateItems({ match }) {
                 <p>Created at: {item.date}</p>
                 <br />
                 <br />
-                
-                <Link to="/admin/manage-items">&larr; Back</Link>
+                <Link to="/">&larr; Back</Link>
             </form>
         </div>
     )

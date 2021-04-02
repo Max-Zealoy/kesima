@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Item from './Item'
 
 
-function Items({ items, deleteItem }) {
+function Items({ items, deleteItem,pageId }) {
     const [setItems] = useState([]);
 
 
@@ -31,7 +31,7 @@ function Items({ items, deleteItem }) {
     return (
         <div> 
             {
-                items.map( item => (
+                 items.map( item => (
                     <div>
                     <Item 
                     key={item['_id']} 
@@ -41,6 +41,8 @@ function Items({ items, deleteItem }) {
                     stock={item.stock}
                     price={item.price}
                     deleteItem={deleteItem}
+                    pageId={pageId}
+                    
                     />
                   
                   

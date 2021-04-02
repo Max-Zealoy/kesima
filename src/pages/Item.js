@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-function Item({ item, deleteItem }) {
+function Item({ item, deleteItem, pageId}) {
     let itemDate = new Date(item.date);
 
     const handleDeleteBtn = () => {
@@ -38,8 +38,17 @@ function Item({ item, deleteItem }) {
                 Make sure to send the punId in the URL, in combination with setting the <Route path="/update-pun/:id"> in App.js 
                 This will ensure that UpdatePun.js gets hold of the punId, through the variable "match"
             */}
-            <Link to={`/update-items/${item['_id']}`}><button>Update</button></Link>
-            <button onClick={handleDeleteBtn}>Delete</button>
+            
+            {pageId === "ManageItems" 
+            ? <div>
+              < Link to={`/update-items/${item['_id']}`}><button>Update</button></Link>
+              <button onClick={handleDeleteBtn}>Delete</button>
+             
+           
+           </div>
+           :''
+            } 
+        
             <Link to={`/ViewItem/${item['_id']}`}><button>View Item</button></Link>
         </table>
     )
