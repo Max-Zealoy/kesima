@@ -7,6 +7,8 @@ import UpdateItem from './pages/admin/UpdateItem';
 import Nav from './pages/Nav';
 import Home from './pages/Home';
 import ViewItem from './pages/ViewItem';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import {
   BrowserRouter as Router,
@@ -15,8 +17,14 @@ import {
 } from "react-router-dom";
 
 function App() {
+
+ 
+
   return (
+
+    
     <Router>
+  
     <div className="App">
         <Nav />
         
@@ -35,6 +43,7 @@ function App() {
           <Route path="/update-items/:id" component={UpdateItem} />
           <Route path="/ViewItem/:id" component={ViewItem} />
         </Switch>
+        
       </div>
     </Router>
   );

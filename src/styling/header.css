@@ -1,0 +1,11 @@
+.main-nav {
+    background-color: black;
+    width: 100%;
+    height: 100px;
+    padding-top: 30px;
+    justify-self: space-between;
+}
+
+Link{
+    color: white;
+}

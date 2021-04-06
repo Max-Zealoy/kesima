@@ -1,9 +1,13 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+import '../styling/header.css';
 
 function Nav() {
     return (
+        
         <nav className="main-nav">
+           
+    
             <ul>
                 {/* a-taggs makes the page reload */}
                 {/* <li><a href="/">Home</a></li>
@@ -15,6 +19,7 @@ function Nav() {
                 <Link to="/create-items">Create Items</Link>
 
             </ul>
+           
         </nav>
     )
 }

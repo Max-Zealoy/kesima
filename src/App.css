@@ -1,10 +1,20 @@
 .App {
   text-align: center;
+  
+}
+
+body{
+  width: auto;
+  background: rgb(49, 49, 49);
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.main-nav a{
+ margin: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -25,7 +35,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #11b9e7;
 }
 
 @keyframes App-logo-spin {
@@ -34,5 +44,55 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+td{
+  font-size: 30px;
+}
+
+.SuperForm{
+  width: min-content;
+  margin: auto;
+}
+
+
+.SuperTitle{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+th{
+  margin: auto;
+  width: 50%;
+  padding-top: 10px;
+}
+
+
+
+.SuperTable{
+  padding: 20px;
+  border: 2px solid rgb(255 255 255 / 90%) !important;
+  border-radius: 18px;
+ 
+ 
+}
+
+.button {
+  padding: 5px 5px;
+  display: inline-block;
+  color: #10e8e4;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1em;
+  overflow: hidden;
+}
+
+
+@media screen and (max-width: 672px) {
+  body{
+    width: min-content;
   }
 }

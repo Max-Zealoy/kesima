@@ -1,15 +1,21 @@
 
  import React, {useState} from 'react';
  import {Link, useHistory} from "react-router-dom";
+ import DisplayImage from '../Image'
  
  function CreateItem() {
      const [item, setItem] = useState({});
      const history = useHistory();
  
       const handleChange = (e) => {
-          const name = e.target.name
+         
+        
+        
+        const name = e.target.name
           const value = e.target.value
 
+
+          
          setItem({
              ...item,
              [name]: value
@@ -17,6 +23,9 @@
      }
 
      const handleSubmit = async (e) => {
+       
+       
+       
         e.preventDefault();
 
         try {
@@ -46,16 +55,19 @@
              <p>Titel</p>
              <input 
              name="title"
+             required maxlength="20"
              type="text" 
              value={item.title} 
              />
              </label>
+
 
              <label>
              <p>price</p>
              <input 
              name="price"
              type="Number"
+             required min="1" max="1000000"
              value={item.price} 
              />
              </label>
@@ -68,9 +80,15 @@
              <input 
              name="stock"
              type="Number"
+             required min="1" max="1000000"
              value={item.stock} 
              />
              </label>
+            
+                <br> 
+                </br> 
+  <DisplayImage/>
+               
             
                 <br> 
                 </br> 
@@ -78,12 +96,13 @@
                  <textarea 
                      name="description" 
                      value={item.description}
+                     required maxlength="300"
                      cols="30" 
                      rows="10"
                  ></textarea> 
                  <br />
                  <br />
-                 <button>Create Item</button>
+                 <button className ="button">Create Item</button>
                  <br />
                  <br />
                  <Link to="/admin/manage-items">&larr; Back</Link>

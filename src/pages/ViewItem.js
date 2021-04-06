@@ -1,10 +1,11 @@
-import React, {useState, useEffect }from 'react';
-import {Link, useHistory} from "react-router-dom";
+import React, {useState, useEffect, }from 'react';
+import {useHistory} from "react-router-dom";
 
 
 function ViewItem({ match }) {
  console.log('ItemId:', match.params.id)
 const [item, setItem] = useState({});
+const history = useHistory();
 
 useEffect(() => {
     fetchItem();
@@ -31,7 +32,7 @@ useEffect(() => {
             <h3>{item.price}</h3>
             <h3>{item.stock}</h3>
             <h3>{item.description}</h3>
-            <Link to="/admin/manage-items">&larr; Back</Link>
+            <button className ="button" onClick={() => history.goBack()}>Go Back</button>
         </div>
     )
 }

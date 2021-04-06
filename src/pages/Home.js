@@ -1,7 +1,8 @@
 import React, {useState, useEffect }from 'react';
 import Items from './Items';
-import ManageItems from './admin/ManageItems';
-import item from './Item';
+
+
+
 
 
 function Home() {
@@ -41,7 +42,9 @@ function Home() {
 
 
     return (
+        
         <div>
+            
             <h1> Home </h1> 
             <Items 
                 items={items} 

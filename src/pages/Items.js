@@ -29,10 +29,13 @@ function Items({ items, deleteItem,pageId }) {
 
 
     return (
-        <div> 
+        <div className="SuperForm"> 
             {
                  items.map( item => (
                     <div>
+                    <table>
+                    <th>
+
                     <Item 
                     key={item['_id']} 
                     item={item}
@@ -40,11 +43,13 @@ function Items({ items, deleteItem,pageId }) {
                     description={item.description}
                     stock={item.stock}
                     price={item.price}
+                    image={item.image}
                     deleteItem={deleteItem}
                     pageId={pageId}
                     
                     />
-                  
+                    </th>
+                    </table>
                   
                      </div>
 

@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import Items from '../Items';
 
+
+
+
 function ManageItems() {
     const [items, setItems] = useState([]);
 
@@ -37,14 +40,21 @@ function ManageItems() {
 
 
 
+
     return (
+        
         <div>
+
+
             <h1>Manage items</h1> 
-            <Items 
+            
+                <Items 
                 items={items} 
                 deleteItem={deleteItem}
                 pageId="ManageItems"
             />
+          
+            
         </div>
     )
 }

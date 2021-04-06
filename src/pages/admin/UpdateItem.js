@@ -70,6 +70,7 @@ function UpdateItems({ match }) {
              <p>Titel</p>
              <input 
              name="title"
+             required maxlength="20"
              type="text" 
              value={item.title} 
 
@@ -80,6 +81,7 @@ function UpdateItems({ match }) {
              <input 
              name="price"
              type="Number"
+             required min="1" max="1000000"
              value={item.price} 
              />
              </label>
@@ -91,6 +93,7 @@ function UpdateItems({ match }) {
              <input 
              name="stock"
              type="Number"
+             required min="1" max="1000000"
              value={item.stock} 
              />
              </label>
@@ -100,6 +103,7 @@ function UpdateItems({ match }) {
                  <textarea 
                      name="description" 
                      value={item.description}
+                     required maxlength="300"
                      cols="30" 
                      rows="10"
                  ></textarea> 
@@ -109,7 +113,7 @@ function UpdateItems({ match }) {
                  <br />
                  
                  
-                 <button>Update</button>
+                 <button className ="button">Update</button>
                  <br />
                  <br />
                 
@@ -117,7 +121,7 @@ function UpdateItems({ match }) {
                 <p>Created at: {item.date}</p>
                 <br />
                 <br />
-                <Link to="/">&larr; Back</Link>
+                <Link to="/admin/manage-items">&larr; Back</Link>
             </form>
         </div>
     )

@@ -1,5 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Table from 'react-bootstrap/Table'
+import { motion } from "framer-motion"
+
+
 
 function Item({ item, deleteItem, pageId}) {
     let itemDate = new Date(item.date);
@@ -8,6 +12,8 @@ function Item({ item, deleteItem, pageId}) {
         deleteItem(item['_id']);
     }
     
+
+  
 /*
 
     "title": "The post4",
@@ -17,23 +23,40 @@ function Item({ item, deleteItem, pageId}) {
 	"stock":10 
 
     */ 
+
+
 // 
+
+
+ 
+
     return (
         
-        <table>
-            <h1>{item.title}</h1>
-            <p>
-                {item.content}
-                <p>price: {item.price}</p>
-                <br />
-                <p>Description: {item.description}</p>
-                <br />
-                <p>stock :{item.stock}</p>
-               
 
-                <br />
-                {`${itemDate.getFullYear()}-${itemDate.getMonth()}-${itemDate.getDate()}`}
-            </p>
+       
+
+
+       <motion.div className ="SuperDiv" class="rounded" >
+             
+             
+           <motion.div
+            
+            drag
+             >
+             
+             <Table striped bordered hover variant="dark" className ="SuperTable">  
+           <thead>
+               <td  colSpan="5" className ="SuperTitle">  {item.title}
+              </td>
+            </thead>   
+            <tbody>  
+               <td><p>price: {item.price}</p></td>
+                <td><p>Description: {item.description}</p></td>
+                <td><p>stock :{item.stock}</p></td>
+                <td><img src={item.image}></img></td>
+                <td><p>{`${itemDate.getFullYear()}-${itemDate.getMonth()}-${itemDate.getDate()}`}
+                </p></td>
+                  
             {/* 
                 Make sure to send the punId in the URL, in combination with setting the <Route path="/update-pun/:id"> in App.js 
                 This will ensure that UpdatePun.js gets hold of the punId, through the variable "match"
@@ -41,16 +64,23 @@ function Item({ item, deleteItem, pageId}) {
             
             {pageId === "ManageItems" 
             ? <div>
-              < Link to={`/update-items/${item['_id']}`}><button>Update</button></Link>
-              <button onClick={handleDeleteBtn}>Delete</button>
+              < Link to={`/update-items/${item['_id']}`}><button className ="button">Update</button></Link>
+              <button className ="button" onClick={handleDeleteBtn}>Delete</button>
+             
              
            
            </div>
            :''
             } 
         
-            <Link to={`/ViewItem/${item['_id']}`}><button>View Item</button></Link>
-        </table>
+            
+            <Link to={`/ViewItem/${item['_id']}`}><button className ="button">View Item</button></Link>
+            </tbody> 
+            </Table>
+            </motion.div>  
+              
+            </motion.div>          
+           
     )
 }
 
