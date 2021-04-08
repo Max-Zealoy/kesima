@@ -3,19 +3,50 @@
   
 }
 
+h1{
+  padding: 30px;
+}
+
+.creatFormDiv img{
+  width: 400px;
+}
+
+.house{
+  width: 134px;
+}
+
 body{
   width: auto;
-  background: rgb(49, 49, 49);
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  background: #060c21;
+
 }
+
+
+
+
+
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+a{
+  color: rgb(255, 255, 255);
+  font-family: 'VT323', monospace;
+}
+
 .main-nav a{
  margin: 10px;
+ padding: 40px;
+color: rgb(0, 0, 0);
+font-size: 25px;
+text-shadow: 0px 1px 0px #ffffff60;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -35,7 +66,7 @@ body{
 }
 
 .App-link {
-  color: #11b9e7;
+  color: #e71111;
 }
 
 @keyframes App-logo-spin {
@@ -47,13 +78,33 @@ body{
   }
 }
 
+.table-dark td, .table-dark th, .table-dark thead th {
+  width: 16%;
+}
+
+textarea {
+  width: 266px;
+
+}
+
 td{
   font-size: 30px;
+  padding-bottom: 30%;
+}
+
+.rounded{
+  width: 1100px;
+  margin: 0px 20px 0px 20px;
 }
 
 .SuperForm{
   width: min-content;
   margin: auto;
+}
+
+tbody{
+  
+  padding-bottom: 30%;
 }
 
 
@@ -73,16 +124,34 @@ th{
 
 .SuperTable{
   padding: 20px;
-  border: 2px solid rgb(255 255 255 / 90%) !important;
-  border-radius: 18px;
- 
+  background: linear-gradient(-45deg, rgb(227, 73, 73), #e3dd41, #23A6D5, #252cf0);
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+
  
 }
 
+@keyframes change {
+  0% {
+    background-position: 0 50%;
+}
+50%{
+  background-position: 100% 50%
+}
+100%{
+  background-position: 0 50%
+}
+
+}
+
+
+
 .button {
+  background-color: #57b8fa;
   padding: 5px 5px;
   display: inline-block;
-  color: #10e8e4;
+  color: #ffffff;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
@@ -90,9 +159,35 @@ th{
   overflow: hidden;
 }
 
-
-@media screen and (max-width: 672px) {
-  body{
-    width: min-content;
-  }
+.btn-primary {
+  width: 266px;
+  font-family: 'VT323', monospace;
 }
+
+.btn-warning:hover span:after{
+  color: white;
+}
+
+
+.btn-warning, .btn-danger,.btn-info {
+  width: 96%;
+  margin-top: 15px;
+  font-family: 'VT323', monospace;
+  color: white;
+text-shadow: 0px 1.2px 0px #000000;
+}
+
+.trent{
+  pointer-events: none;
+  margin-left: 30%;
+}
+
+input{
+  width: 266px;
+}
+
+.viewItemDiv{
+min-width: 200px;
+margin: 200px 300px;
+}
+

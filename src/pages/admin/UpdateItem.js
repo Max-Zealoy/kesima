@@ -1,7 +1,7 @@
-// VG delm
 
 import React, {useState, useEffect} from 'react';
 import {Link, useHistory} from "react-router-dom";
+import DisplayImage from '../Image';
 
 function UpdateItems({ match }) {
     console.log(match);
@@ -20,7 +20,7 @@ function UpdateItems({ match }) {
 
        setItem({
            ...item,
-           [name]: value
+           [name]: value,
        })
    }
    
@@ -47,19 +47,14 @@ function UpdateItems({ match }) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(item) // body data type must match "Content-Type" header
+                body: JSON.stringify(item) 
             });
-    
-            // window.location.replace('/manage-puns') // redirects to the index.html page
-            // A smoother redirecting, without a page reload
+
             history.push('../admin/manage-items')
         } catch (error) {
             console.log(error);
         }
     }
-
-
-
 
     return (
         <div>
@@ -76,6 +71,9 @@ function UpdateItems({ match }) {
 
              />
              </label>
+
+             <br></br>
+
              <label>
              <p>price</p>
              <input 
@@ -97,7 +95,15 @@ function UpdateItems({ match }) {
              value={item.stock} 
              />
              </label>
-             
+            <br></br>
+
+            <DisplayImage
+                 type="file"
+                 value={item.image}
+                 name="image"
+                 alt="product picture"
+                />
+
                 <br> 
                 </br> 
                  <textarea 
@@ -113,7 +119,7 @@ function UpdateItems({ match }) {
                  <br />
                  
                  
-                 <button className ="button">Update</button>
+                 <button className="btn btn-success">Update</button>
                  <br />
                  <br />
                 

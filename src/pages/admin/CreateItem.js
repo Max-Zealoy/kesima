@@ -2,30 +2,25 @@
  import React, {useState} from 'react';
  import {Link, useHistory} from "react-router-dom";
  import DisplayImage from '../Image'
- 
+
+
  function CreateItem() {
      const [item, setItem] = useState({});
      const history = useHistory();
- 
+
+
       const handleChange = (e) => {
          
-        
-        
         const name = e.target.name
           const value = e.target.value
 
-
-          
          setItem({
              ...item,
-             [name]: value
+             [name]: value,
          })
      }
 
-     const handleSubmit = async (e) => {
-       
-       
-       
+     const handleSubmit = async (e) => {   
         e.preventDefault();
 
         try {
@@ -34,11 +29,9 @@
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(item) // body data type must match "Content-Type" header
+                body: JSON.stringify(item) 
             });
     
-            // window.location.replace('/manage-puns') // redirects to the index.html page
-            // A smoother redirecting, without a page reload
             history.push('admin/manage-items')
         } catch (error) {
             console.log(error);
@@ -46,7 +39,7 @@
     }
 
      return (
-         <div>
+         <div className = "creatFormDiv">
              <h1>Create Item</h1>
  
              <form onSubmit={handleSubmit} onChange={handleChange}>
@@ -60,7 +53,7 @@
              value={item.title} 
              />
              </label>
-
+            <br></br>
 
              <label>
              <p>price</p>
@@ -87,9 +80,15 @@
             
                 <br> 
                 </br> 
-  <DisplayImage/>
+                
+              
+                <DisplayImage
+                 type="file"
+                 value={item.image}
+                 name="image"
+                 alt="image"
+                />
                
-            
                 <br> 
                 </br> 
 
@@ -109,7 +108,8 @@
              </form>
          </div>
      )
- }
+ 
+}
  
  export default CreateItem
  

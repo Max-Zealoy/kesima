@@ -1,11 +1,23 @@
 .main-nav {
+    background-image: url("../images/mountains.png");
     background-color: black;
     width: 100%;
-    height: 100px;
-    padding-top: 30px;
+    height: 230px;
+    padding-top: 80px;
+    margin-top: -37px;
     justify-self: space-between;
 }
+
+
 
 Link{
     color: white;
 }
+
+
+@media screen and (max-width: 1200px) {
+    .main-nav{
+      width: 1200px;
+    }
+  }
+

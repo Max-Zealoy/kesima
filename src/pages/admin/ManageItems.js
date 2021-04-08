@@ -2,15 +2,12 @@ import React, {useState, useEffect} from 'react'
 import Items from '../Items';
 
 
-
-
 function ManageItems() {
     const [items, setItems] = useState([]);
 
-    // ComponetetDidMount
     useEffect(() => {
         fetchItems();
-    }, []) // Second arg as empty array means run only once on load, equal to ComponentDidMpunt
+    }, []) 
 
     const fetchItems = async () => {
         try {
@@ -38,14 +35,8 @@ function ManageItems() {
         fetchItems();
     }
 
-
-
-
     return (
-        
         <div>
-
-
             <h1>Manage items</h1> 
             
                 <Items 
@@ -53,8 +44,6 @@ function ManageItems() {
                 deleteItem={deleteItem}
                 pageId="ManageItems"
             />
-          
-            
         </div>
     )
 }

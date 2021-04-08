@@ -4,7 +4,7 @@ class DisplayImage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: null
+      image: ''
     };
 
     this.onImageChange = this.onImageChange.bind(this);
@@ -24,9 +24,10 @@ class DisplayImage extends Component {
       <div>
         <div>
           <div>
-            <img src={this.state.image} />
+            <img src={this.state.image} alt="product picture" />
             <h1>Select Image</h1>
-            <input type="file" name="myImage"  onChange={this.onImageChange} />
+            <input type="file" name="image" alt="image" class="btn btn-primary" onChange={this.onImageChange}  />
+            
           </div>
         </div>
       </div>

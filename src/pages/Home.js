@@ -2,16 +2,11 @@ import React, {useState, useEffect }from 'react';
 import Items from './Items';
 
 
-
-
-
 function Home() {
     const [items, setItems] = useState([]);
-
-    // ComponetetDidMount
     useEffect(() => {
         fetchItems();
-    }, []) // Second arg as empty array means run only once on load, equal to ComponentDidMpunt
+    }, []) 
 
     const fetchItems = async () => {
         try {
@@ -39,12 +34,9 @@ function Home() {
         fetchItems();
     }
 
-
-
     return (
         
         <div>
-            
             <h1> Home </h1> 
             <Items 
                 items={items} 

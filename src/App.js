@@ -1,14 +1,12 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 import ManageItems from './pages/admin/ManageItems';
 import CreateItems from './pages/admin/CreateItem';
 import UpdateItem from './pages/admin/UpdateItem';
-
 import Nav from './pages/Nav';
 import Home from './pages/Home';
 import ViewItem from './pages/ViewItem';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 import {
   BrowserRouter as Router,
@@ -27,7 +25,7 @@ function App() {
   
     <div className="App">
         <Nav />
-        
+      
         <Switch>
           
           <Route path="/" exact component={Home} />

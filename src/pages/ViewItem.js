@@ -26,12 +26,14 @@ useEffect(() => {
     }
 
     return (
-        <div>
+        <div classname = "viewItemDiv">
             <h1>Item Page</h1>
-            <h2>{item.title}</h2>
-            <h3>{item.price}</h3>
-            <h3>{item.stock}</h3>
-            <h3>{item.description}</h3>
+            <h2>Title: {item.title}</h2>
+            <h3>Price: {item.price}</h3>
+            <h3>Stock: {item.stock}</h3>
+            <h3>Image: <img src= {item.image} alt="product picture"></img></h3>
+           
+            <h3>Description: {item.description}</h3>
             <button className ="button" onClick={() => history.goBack()}>Go Back</button>
         </div>
     )

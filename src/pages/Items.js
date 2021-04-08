@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react'
 import Item from './Item'
+import { AnimateSharedLayout } from "framer-motion"
+import { motion } from "framer-motion"
+
 
 
 function Items({ items, deleteItem,pageId }) {
     const [setItems] = useState([]);
 
-
-     // ComponetetDidMount
      useEffect(() => {
         fetchItems();
-    }, []) // Second arg as empty array means run only once on load, equal to ComponentDidMpunt
+    }, []) 
 
     const fetchItems = async () => {
         try {
@@ -31,7 +32,9 @@ function Items({ items, deleteItem,pageId }) {
     return (
         <div className="SuperForm"> 
             {
-                 items.map( item => (
+                <AnimateSharedLayout>
+                 <motion.ul layout>
+                 {items.map( item => (
                     <div>
                     <table>
                     <th>
@@ -53,9 +56,13 @@ function Items({ items, deleteItem,pageId }) {
                   
                      </div>
 
-                ))
-                
+                   ))
+                 }</motion.ul>    
+                </AnimateSharedLayout>
+
             }
+            
+
         </div>
 
 
